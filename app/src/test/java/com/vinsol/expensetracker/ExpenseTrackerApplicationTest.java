@@ -18,6 +18,8 @@ public class ExpenseTrackerApplicationTest extends TestCase {
 
     public void testOnCreate() throws Exception {
 
+        assertTrue(ExpenseTrackerApplication.isInitialized);
+
     }
 
     public void testSetSyncPrefs() throws Exception {
