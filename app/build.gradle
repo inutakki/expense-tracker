@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "com.vinsol.expensetracker"
-        minSdkVersion 8
-        targetSdkVersion 8
+        minSdkVersion 21
+        targetSdkVersion 21
     }
 
     buildTypes {
@@ -40,5 +40,7 @@ dependencies {
     testCompile 'org.mockito:mockito-core:1.10.19'
     // Set this dependency if you want to use Hamcrest matching
     testCompile 'org.hamcrest:hamcrest-library:1.1'
+    // Set this dependency if you want to use Roboelectric
+    // testCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
 }
 
