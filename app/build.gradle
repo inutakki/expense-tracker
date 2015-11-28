@@ -2,6 +2,13 @@ plugins {
     id "org.sonarqube" version "1.0"
 }
 
+sonarqube {
+    properties {
+        property "sonar.projectName", "Expense Tracker"
+        property "sonar.projectKey", "org.sonarqube:com.vinsol.expensetracker"
+    }
+}
+
 apply plugin: 'com.android.application'
 
 android {
