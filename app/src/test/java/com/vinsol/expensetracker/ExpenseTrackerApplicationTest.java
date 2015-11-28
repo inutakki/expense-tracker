@@ -20,7 +20,7 @@ public class ExpenseTrackerApplicationTest extends TestCase {
     }
 
     public void testOnCreate() throws Exception {
-        System.out.println(exp.getPackageName());
+        //System.out.println(exp.getPackageName());
         //assertTrue("" == exp.getPackageName());
     }
 
