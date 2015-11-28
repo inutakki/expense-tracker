@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "com.vinsol.expensetracker"
-        minSdkVersion 21
-        targetSdkVersion 21
+        minSdkVersion 8
+        targetSdkVersion 8
     }
 
     buildTypes {
