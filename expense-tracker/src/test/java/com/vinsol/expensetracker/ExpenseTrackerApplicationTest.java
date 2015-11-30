@@ -19,23 +19,28 @@ public class ExpenseTrackerApplicationTest extends TestCase {
 
     }
 
+
     public void testOnCreate() throws Exception {
-        // System.out.println(exp.getPackageName());
+        System.out.println("executing: testOnCreate()");
         // ExpenseTrackerApplication exp = new ExpenseTrackerApplication();
         // exp.onCreate();
         // assertTrue("ExpenseTrackerApplication" == exp.getPackageName());
-        assertTrue(true);
+        assertTrue("testMockTrue" == "testMockTrue");
     }
+
 
     public void testSetSyncPrefs() throws Exception {
-        assertTrue(true);
+        System.out.println("executing: testSetSyncPrefs()");
+        assertTrue("testMockTrue" == "testMockTrue");
     }
+
 
     public void testInitialize() throws Exception {
-        assertTrue(true);
+        assertTrue("testMockTrue" == "testMockTrue");
     }
 
+
     public void testGetContext() throws Exception {
-        assertTrue(true);
+        assertTrue("testMockTrue" == "testMockTrue");
     }
 }
