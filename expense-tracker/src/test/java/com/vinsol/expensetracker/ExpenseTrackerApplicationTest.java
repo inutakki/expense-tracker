@@ -24,10 +24,11 @@ public class ExpenseTrackerApplicationTest extends TestCase {
         // ExpenseTrackerApplication exp = new ExpenseTrackerApplication();
         // exp.onCreate();
         // assertTrue("ExpenseTrackerApplication" == exp.getPackageName());
+        assertTrue(true);
     }
 
     public void testSetSyncPrefs() throws Exception {
-
+        assertTrue(true);
     }
 
     public void testInitialize() throws Exception {
@@ -35,6 +36,6 @@ public class ExpenseTrackerApplicationTest extends TestCase {
     }
 
     public void testGetContext() throws Exception {
-
+        assertTrue(true);
     }
 }
