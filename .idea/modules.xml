@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/StudioProjects.iml" filepath="$PROJECT_DIR$/StudioProjects.iml" />
-      <module fileurl="file://$PROJECT_DIR$/is-cd-expense-tracker/is-cd-expense-tracker.iml" filepath="$PROJECT_DIR$/is-cd-expense-tracker/is-cd-expense-tracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/expense-tracker/expense-tracker.iml" filepath="$PROJECT_DIR$/expense-tracker/expense-tracker.iml" />
     </modules>
   </component>
 </project>
