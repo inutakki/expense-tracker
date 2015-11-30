@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="AndroidPdfLib">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/AndroidPdfLib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/is-cd-expense-tracker/libs/AndroidPdfLib.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
