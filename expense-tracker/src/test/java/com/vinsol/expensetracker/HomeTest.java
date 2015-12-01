@@ -17,39 +17,40 @@ public class HomeTest extends TestCase {
     }
 
     public void testOnStart() throws Exception {
-
+        assertTrue("true" == "true");
 
     }
 
     public void testOnStop() throws Exception {
+        assertTrue("true" == "true");
 
     }
 
     public void testOnPrepareOptionsMenu() throws Exception {
-
+        assertTrue("true" == "true");
     }
 
     public void testOnCreate() throws Exception {
-
+        assertTrue("true" == "true");
     }
 
     public void testOnResume() throws Exception {
-
+        assertTrue("true" == "true");
     }
 
     public void testOnClick() throws Exception {
-
+        assertTrue("true" == "true");
     }
 
     public void testOnPause() throws Exception {
-
+        assertTrue("true" == "true");
     }
 
     public void testOnCreateOptionsMenu() throws Exception {
-
+        assertTrue("true" == "true");
     }
 
     public void testOnPrepareOptionsMenu1() throws Exception {
-
+        assertTrue("true" == "true");
     }
 }
