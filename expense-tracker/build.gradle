@@ -36,11 +36,22 @@ android {
 
 }
 
+// Nexus Repository plugin
+apply plugin: 'com.bmuschko.nexus'
+
+nexus {
+    sign = false
+    repositoryUrl = 'http://localhost:8081/nexus/content/repositories/releases/'
+    snapshotRepositoryUrl = 'http://localhost:8081/nexus/content/repositories/internal-snapshots/'
+}
+
 dependencies {
     compile 'com.google.code.gson:gson:2.2.1'
     compile files('libs/AndroidPdfLib.jar')
     compile files('libs/FlurryAgent.jar')
     compile files('libs/httpmime-4.2.jar')
+
+
     // Unit testing dependencies
     testCompile 'junit:junit:4.12'
     // Set this dependency if you want to use Mockito
