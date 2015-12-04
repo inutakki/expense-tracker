@@ -31,7 +31,7 @@ public class ExpenseTrackerApplicationTest extends TestCase {
 
     public void testSetSyncPrefs() throws Exception {
         System.out.println("executing: testSetSyncPrefs()");
-        assertTrue("testMockTrue" == "testMockTrue");
+        assertTrue("testMockTrueDummy" == "testMockTrueDummy");
     }
 
 

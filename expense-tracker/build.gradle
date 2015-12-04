@@ -2,7 +2,6 @@ plugins {
     id "org.sonarqube" version "1.1"
 }
 
-// apply plugin: 'java'
 
 apply plugin: 'com.android.application'
 
@@ -51,6 +50,11 @@ dependencies {
     compile files('libs/FlurryAgent.jar')
     compile files('libs/httpmime-4.2.jar')
 
+    // integration testing
+    //agent 'org.aspectj:aspectjweaver:${aspectjVersion}'
+    //testCompile 'ru.yandex.qatools.allure:allure-testng-adaptor:${allureVersion}'
+    testCompile 'org.testng:testng:6.8'
+
 
     // Unit testing dependencies
     testCompile 'junit:junit:4.12'
@@ -61,4 +65,13 @@ dependencies {
     // Set this dependency if you want to use Roboelectric
     // testCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
 }
+
+//Test Logging
+tasks.withType(Test) {
+    testLogging {
+        events "started", "passed", "skipped", "failed"
+    }
+    useTestNG()
+}
+
 
