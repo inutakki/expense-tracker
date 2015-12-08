@@ -57,7 +57,7 @@ public class HomeTest extends TestCase {
 
     @Test
     public void testOnCreateOptionsMenu() throws Exception {
-        assertTrue("true" == "true");
+
     }
 
     @Test

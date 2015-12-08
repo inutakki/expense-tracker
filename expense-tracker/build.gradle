@@ -35,6 +35,8 @@ android {
 
 }
 
+
+
 // nexus repository plugin
 apply plugin: 'com.bmuschko.nexus'
 
@@ -69,9 +71,6 @@ dependencies {
 
 //Test Logging
 tasks.withType(Test) {
-    testLogging {
-        events "started", "passed", "skipped", "failed"
-    }
-    useTestNG()
+
 }
 
