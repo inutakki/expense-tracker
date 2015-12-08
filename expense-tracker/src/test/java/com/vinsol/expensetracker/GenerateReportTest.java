@@ -42,7 +42,7 @@ public class GenerateReportTest extends TestCase {
 
     @Test
     public void testOnActivityResult() throws Exception {
-
+        assertTrue("testMockTrueDummy" == "testMockTrueDummy");
     }
     @Test
     public void testOnPause() throws Exception {
