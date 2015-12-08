@@ -2,6 +2,8 @@ package com.vinsol.expensetracker;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+
 /**
  * Created by isc_2246 on 11/26/15.
  */
@@ -19,7 +21,7 @@ public class ExpenseTrackerApplicationTest extends TestCase {
 
     }
 
-
+    @Test
     public void testOnCreate() throws Exception {
         System.out.println("executing: testOnCreate()");
         // ExpenseTrackerApplication exp = new ExpenseTrackerApplication();
@@ -28,18 +30,18 @@ public class ExpenseTrackerApplicationTest extends TestCase {
         assertTrue("testMockTrue" == "testMockTrue");
     }
 
-
+    @Test
     public void testSetSyncPrefs() throws Exception {
         System.out.println("executing: testSetSyncPrefs()");
         assertTrue("testMockTrueDummy" == "testMockTrueDummy");
     }
 
-
+    @Test
     public void testInitialize() throws Exception {
         assertTrue("testMockTrue" == "testMockTrue");
     }
 
-
+    @Test
     public void testGetContext() throws Exception {
         assertTrue("testMockTrue" == "testMockTrue");
     }
