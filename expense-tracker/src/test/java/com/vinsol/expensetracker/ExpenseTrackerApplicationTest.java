@@ -38,7 +38,7 @@ public class ExpenseTrackerApplicationTest extends TestCase {
 
     @Test
     public void testInitialize() throws Exception {
-        assertTrue("testMockTrue" == "testMockTrue");
+        assertTrue("testMockTrueDummy" == "testMockTrueDummy");
     }
 
     @Test
