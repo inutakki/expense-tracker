@@ -35,8 +35,6 @@ android {
 
 }
 
-
-
 // nexus repository plugin
 apply plugin: 'com.bmuschko.nexus'
 

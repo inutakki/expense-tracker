@@ -16,7 +16,7 @@ public class GenerateReportTest extends TestCase {
 
     @Test
     public void tearDown() throws Exception {
-        assertTrue("testMockTrueDummy" == "testMockTrueDummy");
+        assertTrue("testMockTrueDummy1" == "testMockTrueDummy1");
 
     }
 
