@@ -32,7 +32,7 @@ public class GenerateReportTest extends TestCase {
 
     @Test
     public void testOnCreate() throws Exception {
-        assertTrue("testMockTrueDummy" == "testMockTrueDummy");
+        assertTrue("testMockTrueDummy1" == "testMockTrueDummy1");
     }
 
     @Test
