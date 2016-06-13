@@ -5,7 +5,7 @@ buildscript {
         jcenter()
 
         maven {
-            url 'http://localhost:8081/nexus//content/repositories/central/'
+            url 'http://localhost:8081/artifactory/content/repositories/central/'
         }
     }
     dependencies {
@@ -20,7 +20,7 @@ allprojects {
         jcenter()
 
         maven {
-            url 'http://localhost:8081/nexus//content/repositories/central/'
+            url 'http://localhost:8081/artifactory/content/repositories/central/'
         }
     }
 
