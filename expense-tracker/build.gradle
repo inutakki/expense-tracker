@@ -54,6 +54,7 @@ android {
 
 // nexus repository plugin
 apply plugin: 'com.bmuschko.nexus'
+apply plugin: 'com.jfrog.artifactory'
 
 nexus {
     sign = false
