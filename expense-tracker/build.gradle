@@ -3,7 +3,7 @@
 }*/
 
 version = "1.0"
-/*buildscript {
+buildscript {
     repositories {
         jcenter()
 
@@ -18,7 +18,7 @@ version = "1.0"
 }
 dependencies{
     classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.3"
-}*/
+}
 
 apply plugin: 'com.android.application'
 
