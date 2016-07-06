@@ -21,7 +21,7 @@ buildscript {
 }
 
 
-    apply plugin: "com.jfrog.artifactory"
+   /* apply plugin: "com.jfrog.artifactory"
 
 
 allprojects {
@@ -37,5 +37,5 @@ allprojects {
         }
     }
 
-}
+}*/
 
