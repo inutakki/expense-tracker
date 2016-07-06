@@ -106,6 +106,59 @@ tasks.withType(Test) {
 
 }*/
 
+
+  group = 'com.my.package'
+
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'maven-publish'
+
+
+
+allprojects {
+    repositories {
+        maven {
+            url 'http://localhost:8081/artifactory/globalmaven'
+            credentials {
+                username = "admin"
+                password = "password"
+            }
+        }
+    }
+    
+    
+    
+    
+    artifactoryPublish {
+    clientConfig.info.setBuildName('My_special_build_name')
+    clientConfig.info.setBuildNumber('1')
+}
+
+artifactory {
+    contextUrl = 'http://localhost:8081/artifactory'
+    publish {
+        repository {
+            repoKey = 'Libs-snapshot-local'
+            username = 'admin'
+            password = 'password'
+
+           // username = project.getProperties().artifactory_user
+            //password = project.getProperties().artifactory_password
+        }
+        defaults {
+            publishArtifacts = true
+            publishPom = false
+            publishIvy = false
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'globalmaven'
+        }
+    }
+}
+
+}
+
 publishing.publications {
     apk(MavenPublication) {
         groupId group
