@@ -122,10 +122,10 @@ apply plugin: 'maven-publish'
     }*/
     
     
-    artifactoryPublish {
+  /*  artifactoryPublish {
     clientConfig.info.setBuildName('My_special_build_name')
     clientConfig.info.setBuildNumber('1')
-}
+}*/
 artifactory {
   contextUrl = 'http://localhost:8081/artifactory'   //The base Artifactory URL if not overridden by the publisher/resolver
   publish {
