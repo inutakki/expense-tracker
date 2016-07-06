@@ -2,16 +2,16 @@
 
 buildscript {
     repositories {
-        jcenter()
-
         maven {
-            url 'http://localhost:8081/artifactory/plugins-release'
-            credentials {
+            url 'http://localhost:8081/artifactory/globalmaven'
+             credentials {
                 username = "admin"
                 password = "password"
             }
         }
+        
     }
+}
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
@@ -21,21 +21,55 @@ buildscript {
 }
 
 
-  apply plugin: "com.jfrog.artifactory"
+  group = 'com.my.package'
+
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'maven-publish'
+
 
 
 allprojects {
     repositories {
-        jcenter()
-
         maven {
-            url 'http://localhost:8081/artifactory/plugins-release'
+            url 'http://localhost:8081/artifactory/globalmaven'
             credentials {
                 username = "admin"
                 password = "password"
             }
         }
     }
+    
+    
+    
+    
+    artifactoryPublish {
+    clientConfig.info.setBuildName('My_special_build_name')
+    clientConfig.info.setBuildNumber('1')
+}
+
+artifactory {
+    contextUrl = 'http://localhost:8081/artifactory'
+    publish {
+        repository {
+            repoKey = 'Libs-snapshot-local'
+            username = 'admin'
+            password = 'password'
+
+           // username = project.getProperties().artifactory_user
+            //password = project.getProperties().artifactory_password
+        }
+        defaults {
+            publishArtifacts = true
+            publishPom = false
+            publishIvy = false
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'globalmaven'
+        }
+    }
+}
 
 }
 
