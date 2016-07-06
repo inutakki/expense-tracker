@@ -192,6 +192,6 @@ publishing.publications {
     apk(MavenPublication) {
         groupId group
         artifactId 'MyArtifact'
-        artifact("$buildDir/outputs/apk/${project.getName()}-debug.apk")
+        artifact("builds/outputs/apk/expense-tracker-debug.apk")
     }
 }
