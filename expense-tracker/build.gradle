@@ -3,6 +3,18 @@ plugins {
 }
 
 apply plugin: "com.jfrog.artifactory"
+buildscript {
+    repositories {
+        jcenter()
+
+        maven {
+            url 'http://localhost:8081/artifactory/plugins-release'
+            credentials {
+                username = "admin"
+                password = "password"
+            }
+        }
+    }
 dependencies{
     classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.3"
 }
