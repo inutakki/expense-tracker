@@ -103,7 +103,7 @@ version = "1.0"
 
   group = 'com.my.package'
 
-//apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 
 
