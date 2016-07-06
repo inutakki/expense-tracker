@@ -37,7 +37,7 @@ android {
 
 // nexus repository plugin
 //apply plugin: 'com.bmuschko.nexus'
-apply plugin: 'com.jfrog.artifactory'
+//apply plugin: 'com.jfrog.artifactory'
 
 /*nexus {
     sign = false
@@ -74,7 +74,7 @@ tasks.withType(Test) {
 }
 
 version = "1.0"
-buildscript {
+/*buildscript {
     repositories {
         jcenter()
      }
@@ -82,7 +82,7 @@ buildscript {
     classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0"
 
     }
-}
+}*/
 
 
 /*allprojects {
@@ -108,7 +108,7 @@ apply plugin: 'maven-publish'
 
 
 
-allprojects {
+/*allprojects {
     repositories {
         maven {
             url 'http://localhost:8081/artifactory/globalmaven'
@@ -119,7 +119,7 @@ allprojects {
         }
     }
     
-    }
+    }*/
     
     
     artifactoryPublish {
