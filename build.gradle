@@ -21,7 +21,7 @@ buildscript {
 
 
 
-  group = 'com.my.package'
+ /* group = 'com.my.package'
 
 apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
@@ -71,5 +71,5 @@ artifactory {
     }
 }
 
-}
+}*/
 
