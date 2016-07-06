@@ -15,6 +15,7 @@ buildscript {
             }
         }
     }
+}
 dependencies{
     classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.3"
 }
