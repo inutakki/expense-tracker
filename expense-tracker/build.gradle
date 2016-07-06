@@ -6,19 +6,13 @@ version = "1.0"
 buildscript {
     repositories {
         jcenter()
+     }
+     dependencies{
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0"
 
-        maven {
-            url 'http://localhost:8081/artifactory/plugins-release'
-            credentials {
-                username = "admin"
-                password = "password"
-            }
-        }
     }
 }
-dependencies{
-    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0"
-}
+
 
 apply plugin: 'com.android.application'
 
@@ -53,14 +47,14 @@ android {
 }
 
 // nexus repository plugin
-apply plugin: 'com.bmuschko.nexus'
+//apply plugin: 'com.bmuschko.nexus'
 apply plugin: 'com.jfrog.artifactory'
 
-nexus {
+/*nexus {
     sign = false
     repositoryUrl = 'http://localhost:8081/nexus/content/repositories/releases/'
     snapshotRepositoryUrl = 'http://localhost:8081/nexus/content/repositories/internal-snapshots/'
-}
+}*/
 
 
 dependencies {
@@ -110,7 +104,7 @@ tasks.withType(Test) {
 
   group = 'com.my.package'
 
-apply plugin: 'com.jfrog.artifactory'
+//apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 
 
@@ -126,15 +120,50 @@ allprojects {
         }
     }
     
-    
+    }
     
     
     artifactoryPublish {
     clientConfig.info.setBuildName('My_special_build_name')
     clientConfig.info.setBuildNumber('1')
 }
-
 artifactory {
+  contextUrl = 'http://localhost:8081/artifactory'   //The base Artifactory URL if not overridden by the publisher/resolver
+  publish {
+    contextUrl = 'http://localhost:8081/artifactory'   //The base Artifactory URL for the publisher
+    //A closure defining publishing information
+    repository {
+      repoKey = 'Libs-snapshot-local'   //The Artifactory repository key to publish to
+      username = 'adminr'          //The publisher user name
+      password = 'password'       //The publisher password
+      ivy {
+        //Optional section for configuring Ivy publication. Assumes Maven repo layout if not specified
+        ivyLayout = '[organization]/[module]/[revision]/[type]s/ivy-[revision].xml'
+        artifactLayout = '[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]'
+        mavenCompatible = true //Convert any dots in an [organization] layout value to path separators, similar to Maven's groupId-to-path conversion. True if not specified
+      }
+    }
+     defaults {
+            publishArtifacts = true
+            publishPom = false
+            publishIvy = false
+        }
+    }
+  resolve {
+    contextUrl = 'http://localhost:8081/artifactory'   //The base Artifactory URL for the resolver
+    repository {
+      repoKey = 'libs-releases'  //The Artifactory (preferably virtual) repository key to resolve from
+     
+    }
+  }
+  // Redefine basic properties of the build info object
+  clientConfig.setIncludeEnvVars(true)
+  clientConfig.info.addEnvironmentProperty('test.adding.dynVar',new java.util.Date().toString())
+  clientConfig.info.setBuildName('new-strange-name')
+  clientConfig.info.setBuildNumber('' + new java.util.Random(System.currentTimeMillis()).nextInt(20000))
+  clientConfig.timeout = 600 // Artifactory connection timeout (in seconds). The default timeout is 300 seconds.
+}
+/*artifactory {
     contextUrl = 'http://localhost:8081/artifactory'
     publish {
         repository {
@@ -158,7 +187,7 @@ artifactory {
     }
 }
 
-}
+}*/
 
 publishing.publications {
     apk(MavenPublication) {
