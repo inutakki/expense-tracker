@@ -3,6 +3,10 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'http://localhost:8081/artifactory/plugins-snapshot-local/'
+        }
+    }
              dependencies {
                 classpath 'com.android.tools.build:gradle:1.5.0'
                 classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.3"
@@ -10,7 +14,18 @@ buildscript {
              
         
         
+    
+}
+
+allprojects {
+    repositories {
+        jcenter()
+
+        maven {
+            url 'http://localhost:8081/artifactory/plugins-snapshot-local/'
+        }
     }
+
 }
    /* dependencies {
         
