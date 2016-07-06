@@ -91,7 +91,7 @@ tasks.withType(Test) {
 
 
 
-allprojects {
+/*allprojects {
     repositories {
         jcenter()
 
@@ -104,4 +104,4 @@ allprojects {
         }
     }
 
-}
+}*/
