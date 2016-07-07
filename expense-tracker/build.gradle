@@ -127,6 +127,26 @@ apply plugin: 'maven-publish'
     clientConfig.info.setBuildName('My_special_build_name')
     clientConfig.info.setBuildNumber('1')
 }*/
+
+configurations { published }
+	
+	artifacts { published file ("expense-tracker/build/outputs/apk/expense-tracker-debug.apk") }
+	artifacts { published file ("expense-tracker/build/outputs/apk/expense-tracker-debug-unaligned.apk") }
+	artifacts { published file ("expense-tracker/build/outputs/apk/expense-tracker-release-unsigned.apk") }
+	
+	task uploadLabel (type: Upload) {
+	        configuration = configurations.published
+	        repositories {
+	          maven {
+	                url 'http://localhost:8081/artifactory'
+
+	                credentials {
+	                username = 'admin'
+	               password = 'password'
+	                }
+	         }
+	       }
+	     }
 artifactory {
   contextUrl = 'http://localhost:8081/artifactory'   //The base Artifactory URL if not overridden by the publisher/resolver
   publish {
@@ -169,25 +189,7 @@ artifactory {
   clientConfig.info.setBuildNumber('' + new java.util.Random(System.currentTimeMillis()).nextInt(20000))
   clientConfig.timeout = 600 // Artifactory connection timeout (in seconds). The default timeout is 300 seconds.
 }
-configurations { published }
-	
-	artifacts { published file ("expense-tracker/build/outputs/apk/expense-tracker-debug.apk") }
-	artifacts { published file ("expense-tracker/build/outputs/apk/expense-tracker-debug-unaligned.apk") }
-	artifacts { published file ("expense-tracker/build/outputs/apk/expense-tracker-release-unsigned.apk") }
-	
-	task uploadLabel (type: Upload) {
-	        configuration = configurations.published
-	        repositories {
-	          maven {
-	                url 'http://localhost:8081/artifactory'
 
-	                credentials {
-	                username = 'admin'
-	               password = 'password'
-	                }
-	         }
-	       }
-	     }
 
 /*artifactory {
     contextUrl = 'http://localhost:8081/artifactory'
