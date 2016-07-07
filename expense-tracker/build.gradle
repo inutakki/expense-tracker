@@ -73,7 +73,7 @@ tasks.withType(Test) {
 
 }
 
-version = "1.0"
+
 /*buildscript {
     repositories {
         jcenter()
@@ -102,6 +102,7 @@ version = "1.0"
 
 
   group = 'com.my.package'
+  version = "1.0"
 
 apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
@@ -143,10 +144,11 @@ artifactory {
       }
     }
      defaults {
-            publishArtifacts = true
+            
            publishConfigs('published')
-            publishPom = false
-            publishIvy = false
+           publishArtifacts = true
+            publishPom = true
+            publishIvy = true
         }
     }
   resolve {
@@ -157,9 +159,9 @@ artifactory {
     }
   }
   // Redefine basic properties of the build info object
-  clientConfig.setIncludeEnvVars(true)
-  clientConfig.info.addEnvironmentProperty('test.adding.dynVar',new java.util.Date().toString())
-  clientConfig.info.setBuildName('new-strange-name')
+  //clientConfig.setIncludeEnvVars(true)
+ // clientConfig.info.addEnvironmentProperty('test.adding.dynVar',new java.util.Date().toString())
+  clientConfig.info.setBuildName("${project.name}")
   clientConfig.info.setBuildNumber('' + new java.util.Random(System.currentTimeMillis()).nextInt(20000))
   clientConfig.timeout = 600 // Artifactory connection timeout (in seconds). The default timeout is 300 seconds.
 }
@@ -209,10 +211,10 @@ configurations { published }
 
 }*/
 
-publishing.publications {
+/*publishing.publications {
     apk(MavenPublication) {
         groupId group
         artifactId 'MyArtifact'
         artifact("builds/outputs/apk/expense-tracker-debug.apk")
     }
-}
+}*/
