@@ -217,10 +217,10 @@ artifactory {
 
 }*/
 
-/*publishing.publications {
+publishing.publications {
     apk(MavenPublication) {
         groupId group
         artifactId 'MyArtifact'
         artifact("builds/outputs/apk/expense-tracker-debug.apk")
     }
-}*/
+}
