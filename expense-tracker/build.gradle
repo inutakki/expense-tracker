@@ -164,7 +164,7 @@ artifactory {
     }
      defaults {
             
-          // publishConfigs('published')
+           publishConfigs('published')
            properties=['build.status': "$it.project.status".toString()]
            properties{
            	mavenJava 'org.jfrog:*:*:*@*', key1: 'val1'
