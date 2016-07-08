@@ -114,8 +114,8 @@ apply plugin: 'maven-publish'
         maven {
             url 'http://localhost:8081/artifactory/globalmaven'
             credentials {
-                username = "admin"
-                password = "password"
+                username="admin"
+                password="password"
             }
         }
     }
@@ -134,15 +134,14 @@ configurations { published }
 	artifacts { published file ("build/outputs/apk/expense-tracker-debug-unaligned.apk") }
 	artifacts { published file ("build/outputs/apk/expense-tracker-release-unsigned.apk") }
 	
-	task uploadLabel (type: Upload) {
-	        configuration = configurations.published
+	task uploadLabel(type: Upload) {
+	        configuration=configurations.published
 	        repositories {
 	          maven {
 	                url 'http://localhost:8081/artifactory'
-
 	                credentials {
-	                username = 'admin'
-	               password = 'password'
+	                username='admin'
+	               password='password'
 	                }
 	         }
 	       }
