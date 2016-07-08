@@ -130,9 +130,13 @@ apply plugin: 'maven-publish'
 
 configurations { published }
 	
-	artifacts { published file ("build/outputs/apk/expense-tracker-debug.apk") }
+/*	artifacts { published file ("build/outputs/apk/expense-tracker-debug.apk") }
 	artifacts { published file ("build/outputs/apk/expense-tracker-debug-unaligned.apk") }
-	artifacts { published file ("build/outputs/apk/expense-tracker-release-unsigned.apk") }
+	artifacts { published file ("build/outputs/apk/expense-tracker-release-unsigned.apk") }*/
+	
+	artifacts { published file ("file:///C:/Users/indira.nutakki/workspace/expense-tracker/expense-tracker/build/outputs/apk/expense-tracker-debug.apk") }
+	artifacts { published file ("file:///C:/Users/indira.nutakki/workspace/expense-tracker/expense-tracker/build/outputs/apk/expense-tracker-debug-unaligned.apk") }
+	artifacts { published file ("file:///C:/Users/indira.nutakki/workspace/expense-tracker/expense-tracker/build/outputs/apk/expense-tracker-release-unsigned.apk") }
 	
 	task uploadLabel(type: Upload) {
 	        configuration=configurations.published
